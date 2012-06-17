@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gather</title>
+  <link href="<%= css_style_survey_path(@statistician,:css) %>" rel="stylesheet" type="text/css" />
+  <%= stylesheet_link_tag 'jquery-ui-1.8.13.custom.css' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div class="page">
+	<div id="header">
+		<div id="title">
+        	<div id="logo">
+        		<% if @statistician.file_name == nil %>
+  	 				<%= image_tag("logo.png", :border => 0, :size => "50x50") %>
+  				<% else %>
+     				<%= image_tag(show_logo_statistician_url(@statistician), :alt => @statistician.name, :border => 0, :size => "50x50") %>
+  				<% end %>
+        	</div>
+            <div id="statistician_name"><h2><%= yield :survey_title %></h2></div>
+        </div>
+        <div id="logindisplay">
+        	&nbsp;
+        </div> 
+        <div id="menucontainer">
+        	&nbsp;
+        </div>
+    </div>
+    <div id="main">
+    	<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+    	<%= yield %>
+	    <div id="footer">
+	    </div>
+	</div>
+</div>
+</body>
+</html>

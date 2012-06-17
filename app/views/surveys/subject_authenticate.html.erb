@@ -1,0 +1,11 @@
+<% content_for :survey_title, @statistician.name %>
+<%= form_tag('subject_authenticate') %>
+<h1>This survey requires respondant verification</h1><br /><br />
+Access Code:<br />
+<%= password_field_tag 'pass' %>
+
+<div class="actions">
+   	<%= submit_tag "Continue" %>
+	<%= submit_tag "Cancel" %>
+</div>
+</form>
